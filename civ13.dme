@@ -337,6 +337,7 @@
 #include "code\game\objects\structures\iv_drip.dm"
 #include "code\game\objects\structures\kitchen_spike.dm"
 #include "code\game\objects\structures\levers.dm"
+#include "code\game\objects\structures\mail.dm"
 #include "code\game\objects\structures\minimap.dm"
 #include "code\game\objects\structures\mirror.dm"
 #include "code\game\objects\structures\noticeboard.dm"
@@ -964,5 +965,5 @@
 #include "code\processes\zoom\zoom_scopes.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
-#include "maps\1873\pioneers_wasteland_2.dmm"
+#include "maps\special\football.dmm"
 // END_INCLUDE
