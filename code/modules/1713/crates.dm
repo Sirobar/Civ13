@@ -312,6 +312,12 @@ obj/structure/closet/crate/empty
 	paths = list(/obj/item/weapon/reagent_containers/food/snacks/hardtack = 20,)
 	cratevalue = 50 //Nutrient amt = 2, 2 x 2 for value so 20 x 2 = 40 base
 
+/obj/structure/closet/crate/rations/cannedfood
+	name = "Rations: canned food"
+	paths = list(/obj/item/weapon/can/filled = 20,)
+	cratevalue = 65 //
+
+
 /obj/structure/closet/crate/rations/beer
 	name = "Rations: beer"
 	paths = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer = 10,)
@@ -365,6 +371,10 @@ obj/structure/closet/crate/empty
 				/obj/item/stack/farming/seeds/coffee = 3,
 				/obj/item/stack/farming/seeds/peyote = 3,)
 	cratevalue = 50
+
+obj/structure/closet/crate/rations/mre
+	name = "Rations: MRE"
+	paths = list(/obj/item/weapon/reagent_containers/food/snacks/MRE/generic = 10,)
 
 /obj/structure/closet/crate/brick
 	name = "bricks crate"
