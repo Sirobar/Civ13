@@ -1,13 +1,11 @@
-
-/obj/map_metadata/nomads_europe
-	ID = MAP_NOMADS_EUROPE
-	title = "Nomads (Europe)"
+/obj/map_metadata/nomads_africa
+	ID = MAP_NOMADS_AFRICA
+	title = "Nomads (Africa)"
 	lobby_icon_state = "civ13"
 	no_winner ="The round is proceeding normally."
 	caribbean_blocking_area_types = list(/area/caribbean/no_mans_land/invisible_wall/)
 	respawn_delay = 6000 // 10 minutes!
 	has_hunger = TRUE
-	chad_mode_plus = TRUE
 	faction_organization = list(
 		CIVILIAN,)
 
@@ -30,21 +28,21 @@
 	gamemode = "Classic (Stone Age Start)"
 	var/list/arealist_r = list()
 	var/list/arealist_g = list()
-/obj/map_metadata/nomads_europe/New()
+/obj/map_metadata/nomads_africa/New()
 	..()
 	spawn(18000)
 		seasons()
 
-/obj/map_metadata/nomads_europe/faction2_can_cross_blocks()
+/obj/map_metadata/nomads_africa/faction2_can_cross_blocks()
 	return (processes.ticker.playtime_elapsed >= 0 || admin_ended_all_grace_periods)
 
-/obj/map_metadata/nomads_europe/faction1_can_cross_blocks()
+/obj/map_metadata/nomads_africa/faction1_can_cross_blocks()
 	return (processes.ticker.playtime_elapsed >= 0 || admin_ended_all_grace_periods)
 
-/obj/map_metadata/nomads_europe/cross_message(faction)
+/obj/map_metadata/nomads_africa/cross_message(faction)
 	return ""
 
-/obj/map_metadata/nomads_europe/job_enabled_specialcheck(var/datum/job/J)
+/obj/map_metadata/nomads_africa/job_enabled_specialcheck(var/datum/job/J)
 	if (J.is_nomad == TRUE)
 		. = TRUE
 	else

@@ -132,7 +132,7 @@
 				MAP_KHALKHYN_GOL = 0,
 				MAP_OMAHA = 10,
 				MAP_KURSK = 10,
-//				MAP_GULAG13 = 15,
+				MAP_GULAG13 = 15,
 				MAP_STALINGRAD = 20,
 				MAP_SMALLINGRAD = 0,
 				MAP_NANJING = 20,
@@ -157,6 +157,7 @@
 	// 1873 - TDM
 			maps = list(
 				MAP_LITTLE_CREEK_TDM = 0,
+				MAP_NATIONSRP = 0,
 				MAP_MISSIONARY_RIDGE = 20,
 			)
 		else if (epoch == "Imperial Age (1650-1780)")
