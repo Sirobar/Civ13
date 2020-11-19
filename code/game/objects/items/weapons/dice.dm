@@ -74,9 +74,3 @@ obj/item/weapon/dice/d10
 	desc = "Contains all the dice you'll ever need."
 	icon = 'icons/obj/dice.dmi'
 	icon_state = "dicebag"
-
-/obj/item/weapon/dice/d4/Crossed(var/mob/living/carbon/human/H)
-	if(istype(H) && !H.shoes)
-		H << "<span class='userdanger'>You step on the D4!</span>"
-		H.apply_damage(4,BRUTE,(pick("l_leg", "r_leg")))
-		H.Weaken(3)
