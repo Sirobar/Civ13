@@ -376,7 +376,7 @@
 
 
 		// if paper is not in usr, then it must be near them, or in a clipboard or folder, which must be in or near usr
-		if (loc != usr && !Adjacent(usr) && (loc.loc == usr || loc.Adjacent(usr)) )
+		if (loc != usr && !Adjacent(usr) && !((istype(loc, /obj/item/weapon/clipboard) || istype(loc, /obj/item/weapon/folder)) && (loc.loc == usr || loc.Adjacent(usr)) ) )
 			return
 /*
 		t = checkhtml(t)
@@ -472,7 +472,7 @@
 		return
 
 	else if (istype(P, /obj/item/weapon/stamp))
-		if ((!in_range(src, usr) && loc != user && loc.loc != user && user.get_active_hand() != P))
+		if ((!in_range(src, usr) && loc != user && !( istype(loc, /obj/item/weapon/clipboard) ) && loc.loc != user && user.get_active_hand() != P))
 			return
 		playsound(src,'sound/effects/Stamp.ogg',40,1)
 		stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper is marked with the [P.name].</i>"
