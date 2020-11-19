@@ -21,12 +21,23 @@
 	var/comment = ""
 	if (sides == 20 && result == 20)
 		comment = "Nat 20!"
-	else if (sides == 20 && result == TRUE)
+	else if (sides == 20 && result == 1)
 		comment = "Ouch, bad luck."
 	icon_state = "[name][result]"
-	user.visible_message("<span class='notice'>[user] has thrown [src]. It lands on [result]. [comment]</span>", \
-						 "<span class='notice'>You throw [src]. It lands on a [result]. [comment]</span>", \
-						 "<span class='notice'>You hear [src] landing on a [result]. [comment]</span>")
+	if(initial(icon_state) == "d00")
+		result = (result - 1)*10
+	if(user != null) //Dice was rolled in someone's hand
+		user.visible_message("<span class='notice'>[user] has thrown [src]. It lands on [result]. [comment]</span>", \
+							 "<span class='notice'>You throw [src]. It lands on [result]. [comment]</span>", \
+							 "<span class='notice'>You hear [src] landing on [result]. [comment]</span>")
+	else if(src.throwing == 0) //Dice was thrown and is coming to rest
+		src.loc.visible_message("<span class='notice'>[src] rolls to a stop, landing on [result]. [comment]</span>")
+
+/obj/item/weapon/dice/d2
+	name = "d2"
+	desc = "A die with two sides. Coins are undignified!"
+	icon_state = "d2"
+	sides = 2
 
 /obj/item/weapon/dice/d4
 	name = "d4"
@@ -34,37 +45,38 @@
 	icon_state = "d4"
 	sides = 4
 
-/obj/item/weapon/dice/attack_self(mob/user as mob)
-	var/result = rand(1, sides)
-	var/comment = ""
-	if (sides == 4 && result == 4)
-		comment = "Nat 4?"
-	else if (sides == 4 && result == TRUE)
-		comment = "Ouch, bad luck."
-	icon_state = "[name][result]"
-	user.visible_message("<span class='notice'>[user] has thrown [src]. It lands on [result]. [comment]</span>", \
-						 "<span class='notice'>You throw [src]. It lands on a [result]. [comment]</span>", \
-						 "<span class='notice'>You hear [src] landing on a [result]. [comment]</span>")
 /obj/item/weapon/dice/d8
 	name = "d8"
 	desc = "A dice with eight sides. The prefered dice to throw at the enemy."
 	icon_state = "d8"
 	sides = 8
 
-/obj/item/weapon/dice/attack_self(mob/user as mob)
-	var/result = rand(1, sides)
-	var/comment = ""
-	if (sides == 8 && result == 8)
-		comment = "Nat 8?"
-	else if (sides == 8 && result == TRUE)
-		comment = "Ouch, bad luck."
-	icon_state = "[name][result]"
-	user.visible_message("<span class='notice'>[user] has thrown [src]. It lands on [result]. [comment]</span>", \
-						 "<span class='notice'>You throw [src]. It lands on a [result]. [comment]</span>", \
-						 "<span class='notice'>You hear [src] landing on a [result]. [comment]</span>")
+obj/item/weapon/dice/d10
+	name = "d10"
+	desc = "A die with ten sides. Useful for percentages."
+	icon_state = "d10"
+	sides = 10
+
+/obj/item/weapon/dice/d00
+	name = "d00"
+	desc = "A die with ten sides. Works better for d100 rolls than a golfball."
+	icon_state = "d00"
+	sides = 10
+
+/obj/item/weapon/dice/d12
+	name = "d12"
+	desc = "A die with twelve sides. There's an air of neglect about it."
+	icon_state = "d12"
+	sides = 12
 
 /obj/item/storage/pill_bottle/dice
 	name = "bag of dice"
 	desc = "Contains all the dice you'll ever need."
 	icon = 'icons/obj/dice.dmi'
 	icon_state = "dicebag"
+
+/obj/item/weapon/dice/d4/Crossed(var/mob/living/carbon/human/H)
+	if(istype(H) && !H.shoes)
+		H << "<span class='userdanger'>You step on the D4!</span>"
+		H.apply_damage(4,BRUTE,(pick("l_leg", "r_leg")))
+		H.Weaken(3)

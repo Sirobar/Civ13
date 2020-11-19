@@ -155,6 +155,7 @@
 #include "code\game\objects\items\bin.dm"
 #include "code\game\objects\items\cards.dm"
 #include "code\game\objects\items\clay_items.dm"
+#include "code\game\objects\items\clipboard.dm"
 #include "code\game\objects\items\glassjar.dm"
 #include "code\game\objects\items\pen.dm"
 #include "code\game\objects\items\soap.dm"
@@ -967,5 +968,5 @@
 #include "code\processes\zoom\zoom_scopes.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
-#include "maps\1873\nationsrp.dmm"
+#include "maps\nomads\nomads.dmm"
 // END_INCLUDE

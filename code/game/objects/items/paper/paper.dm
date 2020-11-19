@@ -89,6 +89,20 @@
 			icon_state = "Colonial_Paper_Empty"
 			desc = "A blank paper sheet."
 
+/obj/item/weapon/paper/verb/airplane()
+	set name = "Make Paper Airplane"
+	set category = "Object"
+	set src in usr
+
+	if((CLUMSY in usr.mutations) && prob(25))
+		usr << "<span class='warning'>You cut yourself on the paper! Ahhhh! Ahhhhh!</span>"
+		usr.damageoverlaytemp = 9001
+		return
+	src.icon_state = "paper_plane"
+	src.throw_range = 14
+	src.name = "airplane- \"[src.name]\""
+	add_fingerprint(usr)
+
 /obj/item/weapon/paper/update_icon()
 	if (base_icon == "paper")
 		if (map && map.ordinal_age <= 1)
