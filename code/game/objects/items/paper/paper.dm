@@ -93,11 +93,6 @@
 	set name = "Make Paper Airplane"
 	set category = "Object"
 	set src in usr
-
-	if((CLUMSY in usr.mutations) && prob(25))
-		usr << "<span class='warning'>You cut yourself on the paper! Ahhhh! Ahhhhh!</span>"
-		usr.damageoverlaytemp = 9001
-		return
 	src.icon_state = "paper_plane"
 	src.throw_range = 14
 	src.name = "airplane- \"[src.name]\""
