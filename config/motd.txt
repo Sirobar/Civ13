@@ -1,8 +1,9 @@
-<h2><small><span style = "font-size: 1.20em;">Welcome to <b><span style = "font-size: 1.20em;">Civilization 13<span style = "color: #CD4C6C"> - Beta Edition</span></span></b></span></small></h2>
+<h2><small><span style = "font-size: 1.20em;">Welcome to <b><span style = "font-size: 1.20em;">Sishcisa<span style = "color: #80200"> Siro's Shitty Civ Sandbox - Beta Edition!</span></span></b></span></small></h2>
 <i>
 The current map is <b>{server_map}</b>.
 <br>
 This server is running {server_version}, and you are running {client_version}.
+<h2>This is not an official civ server, play nice if you follow these links.</h2>
 <h2>RULES: http://civ13.com/rules</h2>
 
 <h2><small>Github: https://github.com/civ13/civ13</small></h2>
