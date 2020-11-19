@@ -303,7 +303,7 @@
 	title = "Town Doctor"
 	rank_abbreviation = ""
 
-	spawn_location = "JoinLateJPCap"
+	spawn_location = "JoinLateCiv"
 	is_medic = TRUE
 	is_cowboy = TRUE
 
