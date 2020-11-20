@@ -480,32 +480,22 @@
 		user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info_links][stamps]</BODY></HTML>", "window=[name]")
 		return
 
-	else if (istype(P, /obj/item/weapon/stamp))
+	else if ((istype(P, /obj/item/weapon/stamp) && !( istype(P, /obj/item/weapon/stamp/mail))))
 		if ((!in_range(src, usr) && loc != user && !( istype(loc, /obj/item/weapon/clipboard) ) && loc.loc != user && user.get_active_hand() != P))
 			return
 		playsound(src,'sound/effects/Stamp.ogg',40,1)
-		stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper is marked with the [P.name].</i>"
-
+		stamps += "<img src=large_[P.icon_state].png>"
 		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
-		x = rand(-2, 2)
-		y = rand(-3, 2)
-		offset_x += x
-		offset_y += y
-		stampoverlay.pixel_x = x
-		stampoverlay.pixel_y = y
-
-
-		if (!ico)
-			ico = new
-		ico += "paper_[P.icon_state]"
+		stampoverlay.pixel_x = rand(-2, 2)
+		stampoverlay.pixel_y = rand(-3, 2)
 		stampoverlay.icon_state = "paper_[P.icon_state]"
 
-		if (!stamped)
+		if(!stamped)
 			stamped = new
 		stamped += P.type
 		overlays += stampoverlay
 
-		user << "<span class='notice'>You stamp the paper with your hot wax seal.</span>"
+		user << "<span class='notice'>You stamp the paper the [P.name].</span>"
 
 	else if (istype(P, /obj/item/weapon/flame))
 		burnpaper(P, user)
