@@ -11,23 +11,23 @@
 	attack_verb = list("stamped")
 
 /obj/item/weapon/stamp/rn
-	name = "British Governor seal"
+	name = "British Governor's seal"
 	icon_state = "stamp-rn"
 
 /obj/item/weapon/stamp/fr
-	name = "French Governor seal"
+	name = "French Governor's seal"
 	icon_state = "stamp-fr"
 
 /obj/item/weapon/stamp/pt
-	name = "Portuguese Governor seal"
+	name = "Portuguese Governor's seal"
 	icon_state = "stamp-pt"
 
 /obj/item/weapon/stamp/es
-	name = "Spanish Governor seal"
+	name = "Spanish Governor's seal"
 	icon_state = "stamp-es"
 
 /obj/item/weapon/stamp/nl
-	name = "Dutch Governor seal"
+	name = "Dutch Governor's seal"
 	icon_state = "stamp-nl"
 
 /obj/item/weapon/stamp/baily
@@ -35,7 +35,9 @@
 	icon_state = "stamp-fr"
 
 /obj/item/weapon/stamp/mail
+	name = "envelope seal"
 	icon_state = "stamp_blank"
+	desc = "A stamp for sealing important documents."
 
 /obj/item/weapon/stamp/captain
 	name = "captain's ink stamp"
@@ -62,7 +64,7 @@
 	icon_state = "stamp-cmo"
 
 /obj/item/weapon/stamp/denied
-	name = "\improper DENIED ink stamp"
+	name = "DENIED ink stamp"
 	icon_state = "stamp-deny"
 
 /obj/item/weapon/stamp/clown
