@@ -23,6 +23,8 @@
 	/obj/item/weapon/reagent_containers/glass/small_pot/german_kit_lid
 	)
 
+
+
 /obj/item/weapon/storage/ww2/german
 	name = "german messkit"
 	desc = "It's a standard issue messkit for german military personel"
@@ -99,6 +101,12 @@
 	W.on_exit_storage(src)
 	update_icon()
 	return TRUE
+
+/obj/item/weapon/storage/ww2/slunch
+	name = "steel lunchbox"
+	desc = "It's a pressed steel lunchbox."
+	icon_state = "gerkit"
+	item_state = "gerkit"
 
 /obj/item/weapon/storage/ww2/shaving_kit
 	name = "Shaving kit"
