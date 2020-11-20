@@ -21,17 +21,28 @@
 	var/comment = ""
 	if (sides == 20 && result == 20)
 		comment = "Nat 20!"
-	else if (sides == 20 && result == 1)
-		comment = "Ouch, bad luck."
+	if (sides == 12 && result == 12)
+		comment = "Good roll!"
+	if (sides == 10 && result == 10)
+		comment = "Great roll!"
+	if (sides == 8 && result == 8)
+		comment = "Good roll!"
+	if (sides == 6 && result == 6)
+		comment = "Fine roll!"
+	if (sides == 4 && result == 4)
+		comment = "Nice roll!"
+	if (sides == 2 && result == 2)
+		comment = "Nice filp!"
+	if (sides == 10 && (initial(icon_state) == "d00") && result == 1)
+		comment = "Bad luck, maybe..."
+	else if (result == 1 && (initial(icon_state) != "d00"))
+		comment = "Ouch, snake eye."
 	icon_state = "[name][result]"
 	if(initial(icon_state) == "d00")
 		result = (result - 1)*10
-	if(user != null) //Dice was rolled in someone's hand
-		user.visible_message("<span class='notice'>[user] has thrown [src]. It lands on [result]. [comment]</span>", \
-							 "<span class='notice'>You throw [src]. It lands on [result]. [comment]</span>", \
-							 "<span class='notice'>You hear [src] landing on [result]. [comment]</span>")
-	else if(src.throwing == 0) //Dice was thrown and is coming to rest
-		src.loc.visible_message("<span class='notice'>[src] rolls to a stop, landing on [result]. [comment]</span>")
+	user.visible_message("<span class='notice'>[user] has thrown [src]. It lands on [result]. [comment]</span>", \
+						 "<span class='notice'>You throw [src]. It lands on [result]. [comment]</span>", \
+						 "<span class='notice'>You hear [src] landing on [result]. [comment]</span>")
 
 /obj/item/weapon/dice/d2
 	name = "d2"
@@ -41,7 +52,7 @@
 
 /obj/item/weapon/dice/d4
 	name = "d4"
-	desc = "A dice with four sides. The prefered dice to throw at the enemy."
+	desc = "A dice with four sides. Nerd caltrop."
 	icon_state = "d4"
 	sides = 4
 
