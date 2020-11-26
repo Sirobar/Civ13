@@ -287,6 +287,13 @@
 	volume = 30
 	center_of_mass = list("x"=15, "y"=13)
 
+/obj/item/weapon/reagent_containers/food/drinks/britmug
+	name = "ceramic mug"
+	desc = "A glass mug with a bright ensign emblazoned on it."
+	icon_state = "britcup"
+	volume = 30
+	center_of_mass = list("x"=15, "y"=13)
+
 /obj/item/cocktail_stuff
 	name = "snackarooni cocktailarooni"
 	desc = "Something's off about this."

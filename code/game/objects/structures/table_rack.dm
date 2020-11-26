@@ -38,8 +38,8 @@
 
 /obj/structure/table/rack/coatrack
 	name = "coat rack"
-	desc = "A on which to hang your coat."
+	desc = "A convenient place to hang your hat."
+	icon = 'icons/obj/junk.dmi'
 	icon_state = "coatrack"
-	flammable = FALSE
+	flammable = TRUE
 	not_movable = FALSE
-	not_disassemblable = TRUE

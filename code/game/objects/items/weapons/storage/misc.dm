@@ -123,20 +123,3 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10,20,30,40)
 	volume = 40
-
-	/obj/item/weapon/storage/pill_bottle/dice
-	name = "pack of dice"
-	desc = "It's a small container with dice inside."
-	icon = 'icons/obj/dice.dmi'
-	icon_state = "dicebag"
-
-	New()
-		..()
-		new /obj/item/weapon/dice/d2( src )
-		new /obj/item/weapon/dice/d4( src )
-		new /obj/item/weapon/dice( src )
-		new /obj/item/weapon/dice/d8( src )
-		new /obj/item/weapon/dice/d10( src )
-		new /obj/item/weapon/dice/d00( src )
-		new /obj/item/weapon/dice/d12( src )
-		new /obj/item/weapon/dice/d20( src )

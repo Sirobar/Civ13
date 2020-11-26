@@ -80,8 +80,19 @@ obj/item/weapon/dice/d10
 	icon_state = "d12"
 	sides = 12
 
-/obj/item/storage/pill_bottle/dice
+/obj/item/weapon/storage/pill_bottle/dice
 	name = "bag of dice"
-	desc = "Contains all the dice you'll ever need."
+	desc = "It's a small container with dice inside."
 	icon = 'icons/obj/dice.dmi'
 	icon_state = "dicebag"
+
+	New()
+		..()
+		new /obj/item/weapon/dice/d2( src )
+		new /obj/item/weapon/dice/d4( src )
+		new /obj/item/weapon/dice( src )
+		new /obj/item/weapon/dice/d8( src )
+		new /obj/item/weapon/dice/d10( src )
+		new /obj/item/weapon/dice/d00( src )
+		new /obj/item/weapon/dice/d12( src )
+		new /obj/item/weapon/dice/d20( src )

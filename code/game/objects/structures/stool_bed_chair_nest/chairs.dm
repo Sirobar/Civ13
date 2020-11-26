@@ -247,7 +247,10 @@
 	overlays += I
 
 /obj/structure/bed/chair/wood/wings
+	name = "wing back wood chair"
 	icon_state = "wooden_chair_wings"
 
 /obj/structure/bed/chair/wood/red
+	name = "padded chair"
+	desc = "Built with padding for extra comfort."
 	icon_state = "wooden_chair_red"

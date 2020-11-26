@@ -35,7 +35,6 @@
 	not_disassemblable = FALSE
 	mouse_drop_zone = TRUE
 	var/fixedsprite
-	var/default_material = null
 
 /obj/structure/table/New()
 	..()
@@ -405,7 +404,6 @@
 	name = "iron table"
 	desc = "A very hard table."
 	icon_state = "table"
-	default_material = "iron"
 	frame = /obj/structure/table_frame
 	framestack = /obj/item/stack/material/iron
 	buildstack = /obj/item/stack/material/iron
@@ -414,7 +412,6 @@
 	name = "marble table"
 	desc = "A very hard table."
 	icon_state = "table"
-	default_material = "marble"
 	frame = /obj/structure/table_frame
 	framestack = /obj/item/stack/material/marble
 	buildstack = /obj/item/stack/material/marble
@@ -450,6 +447,8 @@
 	name = "reinforced table"
 	desc = "A very hard table."
 	icon_state = "reinftable"
+	health = 350
+	not_movable = TRUE
 	frame = /obj/structure/table_frame
 	framestack = /obj/item/stack/material/steel
 	buildstack = /obj/item/stack/material/steel

@@ -136,8 +136,8 @@
 	hitsound = 'sound/weapons/blade_parry1.ogg'
 
 /obj/structure/wallclock
-	name = "grandfather clock"
-	desc = "A classic wall clock."
+	name = "standing clock"
+	desc = "A classic standing clock."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "wall_clock"
 	flammable = TRUE

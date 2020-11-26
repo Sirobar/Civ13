@@ -9,6 +9,7 @@
 	throw_speed = 7
 	throw_range = 15
 	attack_verb = list("stamped")
+	var/mob/living/human/owner = null
 
 /obj/item/weapon/stamp/rn
 	name = "British Governor's seal"
@@ -37,22 +38,22 @@
 /obj/item/weapon/stamp/mail
 	name = "envelope seal"
 	icon_state = "stamp_blank"
-	desc = "A stamp for sealing important documents."
+	desc = "A stamp for sealing important envelopes."
 
 /obj/item/weapon/stamp/captain
-	name = "captain's ink stamp"
+	name = "large blue ink stamp"
 	icon_state = "stamp-cap"
 
 /obj/item/weapon/stamp/hop
-	name = "first officer's ink stamp"
+	name = "blue ink stamp"
 	icon_state = "stamp-hop"
 
 /obj/item/weapon/stamp/hos
-	name = "head of security's ink stamp"
+	name = "red ink stamp"
 	icon_state = "stamp-hos"
 
 /obj/item/weapon/stamp/ce
-	name = "chief engineer's ink stamp"
+	name = "yellow ink stamp"
 	icon_state = "stamp-ce"
 
 /obj/item/weapon/stamp/rd
@@ -68,25 +69,25 @@
 	icon_state = "stamp-deny"
 
 /obj/item/weapon/stamp/clown
-	name = "clown's ink stamp"
+	name = "silly ink stamp"
 	icon_state = "stamp-clown"
 
 /obj/item/weapon/stamp/internalaffairs
-	name = "internal affairs ink stamp"
+	name = "dark red ink stamp"
 	icon_state = "stamp-intaff"
 
 /obj/item/weapon/stamp/centcomm
-	name = "centcomm ink stamp"
+	name = "large green ink stamp"
 	icon_state = "stamp-cent"
 
 /obj/item/weapon/stamp/qm
-	name = "quartermaster's stamp"
+	name = "yellow ink stamp"
 	icon_state = "stamp-qm"
 
-// Syndicate stamp to forge documents.
+// "Syndicate stamp to forge documents." Was the orrigional comments for the orrigional item. Its a fancy adujustable stamp now, nothing sinister yet. - siro
 /obj/item/weapon/stamp/chameleon/attack_self(mob/user as mob)
 
-	var/list/stamp_types = typesof(/obj/item/weapon/stamp) - type // Get all stamp types except our own
+	var/list/stamp_types = typesof((/obj/item/weapon/stamp) && !(/obj/item/weapon/stamp/mail)) - type // Get all stamp types except our own
 	var/list/stamps = list()
 
 	// Generate them into a list
@@ -96,7 +97,7 @@
 
 	var/list/show_stamps = list("EXIT" = null) + sortList(stamps) // the list that will be shown to the user to pick from
 
-	var/input_stamp = WWinput(user, "Choose a stamp to disguise as.", "Choose a stamp.", show_stamps[1], show_stamps)
+	var/input_stamp = WWinput(user, "Choose a stamp to change to.", "Choose a stamp.", show_stamps[1], show_stamps)
 
 	if (user && src in user.contents)
 
