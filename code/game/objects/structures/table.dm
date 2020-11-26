@@ -35,6 +35,7 @@
 	not_disassemblable = FALSE
 	mouse_drop_zone = TRUE
 	var/fixedsprite
+	var/default_material = null
 
 /obj/structure/table/New()
 	..()
