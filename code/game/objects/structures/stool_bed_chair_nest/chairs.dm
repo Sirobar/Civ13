@@ -228,6 +228,7 @@
 	name = "steel chair"
 	desc = "cold boring chair."
 	icon_state = "steelchair"
+	base_icon = "steelchair"
 	material = "steel"
 	applies_material_colour = FALSE
 

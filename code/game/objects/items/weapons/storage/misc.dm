@@ -1,12 +1,3 @@
-/obj/item/weapon/storage/pill_bottle/dice
-	name = "pack of dice"
-	desc = "It's a small container with dice inside."
-
-	New()
-		..()
-		new /obj/item/weapon/dice( src )
-		new /obj/item/weapon/dice/d20( src )
-
 /obj/item/weapon/storage/ww2
 	name = "messkit"
 	desc = "It's a standard issue messkit for military personel"
@@ -22,8 +13,6 @@
 	/obj/item/weapon/reagent_containers/food/drinks/bottle/canteen/ww2,
 	/obj/item/weapon/reagent_containers/glass/small_pot/german_kit_lid
 	)
-
-
 
 /obj/item/weapon/storage/ww2/german
 	name = "german messkit"
@@ -102,12 +91,6 @@
 	update_icon()
 	return TRUE
 
-/obj/item/weapon/storage/ww2/slunch
-	name = "steel lunchbox"
-	desc = "It's a pressed steel lunchbox."
-	icon_state = "gerkit"
-	item_state = "gerkit"
-
 /obj/item/weapon/storage/ww2/shaving_kit
 	name = "Shaving kit"
 	desc = "It's a standard issue shaving kit for military personel"
@@ -140,3 +123,20 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10,20,30,40)
 	volume = 40
+
+	/obj/item/weapon/storage/pill_bottle/dice
+	name = "pack of dice"
+	desc = "It's a small container with dice inside."
+	icon = 'icons/obj/dice.dmi'
+	icon_state = "dicebag"
+
+	New()
+		..()
+		new /obj/item/weapon/dice/d2( src )
+		new /obj/item/weapon/dice/d4( src )
+		new /obj/item/weapon/dice( src )
+		new /obj/item/weapon/dice/d8( src )
+		new /obj/item/weapon/dice/d10( src )
+		new /obj/item/weapon/dice/d00( src )
+		new /obj/item/weapon/dice/d12( src )
+		new /obj/item/weapon/dice/d20( src )

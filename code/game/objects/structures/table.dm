@@ -404,6 +404,7 @@
 	name = "iron table"
 	desc = "A very hard table."
 	icon_state = "table"
+	default_material = "iron"
 	frame = /obj/structure/table_frame
 	framestack = /obj/item/stack/material/iron
 	buildstack = /obj/item/stack/material/iron
@@ -412,6 +413,7 @@
 	name = "marble table"
 	desc = "A very hard table."
 	icon_state = "table"
+	default_material = "marble"
 	frame = /obj/structure/table_frame
 	framestack = /obj/item/stack/material/marble
 	buildstack = /obj/item/stack/material/marble
