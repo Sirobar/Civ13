@@ -402,3 +402,12 @@
 
 	attack_verb = list("jabbed", "hit", "bashed")
 	flammable = TRUE
+
+/obj/item/weapon/whistle/tin
+	name = "whistle"
+	desc = "A cheap whistle made from tin."
+	icon = 'icons/obj/clothing/masks.dmi'
+	icon_state = "whistle"
+	flags = CONDUCT
+	slot_flags = SLOT_BELT | SLOT_POCKET
+	w_class = 1.0

@@ -1,6 +1,6 @@
 /obj/item/weapon/storage/ww2
 	name = "messkit"
-	desc = "It's a standard issue messkit for military personel"
+	desc = "It's a cheap tin messkit"
 	icon_state = "gerkit"
 	item_state = "gerkit"
 	max_storage_space = 8
@@ -13,7 +13,6 @@
 	/obj/item/weapon/reagent_containers/food/drinks/bottle/canteen/ww2,
 	/obj/item/weapon/reagent_containers/glass/small_pot/german_kit_lid
 	)
-
 /obj/item/weapon/storage/ww2/german
 	name = "german messkit"
 	desc = "It's a standard issue messkit for german military personel"
@@ -106,8 +105,8 @@
 /obj/item/weapon/storage/ww2/shaving_kit/german
 	name = "german shaving kit"
 	desc = "It's a standard issue shaving kit for german military personel"
-	icon_state = "shaving_kit"
-	item_state = "shaving_kit"
+	icon_state = "shaving_kit_germ"
+	item_state = "shaving_kit_germ"
 	New()
 		..()
 		new /obj/item/weapon/material/kitchen/utensil/knife/razorblade( src )
@@ -123,3 +122,12 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10,20,30,40)
 	volume = 40
+
+slunch
+/obj/item/weapon/storage/ww2/slunch
+	name = "lunch kit"
+	desc = "It's a lunch kit pressed from steel."
+	icon_state = "slunch"
+	item_state = "slunch"
+	max_storage_space = 12
+	w_class = 2
