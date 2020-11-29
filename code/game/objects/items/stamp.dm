@@ -40,6 +40,8 @@
 	icon_state = "stamp_blank"
 	desc = "A stamp for sealing important envelopes."
 
+
+//INKSTAMPS FOLLOW -siro
 /obj/item/weapon/stamp/captain
 	name = "large blue ink stamp"
 	icon_state = "stamp-cap"
@@ -77,7 +79,7 @@
 	icon_state = "stamp-intaff"
 
 /obj/item/weapon/stamp/centcomm
-	name = "large green ink stamp"
+	name = "APPROVED ink stamp"
 	icon_state = "stamp-cent"
 
 /obj/item/weapon/stamp/qm
