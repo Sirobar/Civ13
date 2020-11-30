@@ -91,8 +91,8 @@
 	return TRUE
 
 /obj/item/weapon/storage/ww2/shaving_kit
-	name = "Shaving kit"
-	desc = "It's a standard issue shaving kit for military personel"
+	name = "small pouch"
+	desc = "It's a small leather pouch."
 	icon_state = "shaving_kit"
 	item_state = "shaving_kit"
 	max_storage_space = 2
