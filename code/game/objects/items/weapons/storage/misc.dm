@@ -4,7 +4,8 @@
 	icon_state = "gerkit"
 	item_state = "gerkit"
 	max_storage_space = 8
-	w_class = 1
+	w_class = 2
+	max_w_class = 1
 	can_hold = new/list(
 	/obj/item/weapon/material/kitchen/utensil,
 	/obj/item/weapon/reagent_containers/food/snacks,
@@ -18,7 +19,6 @@
 	desc = "It's a standard issue messkit for german military personel"
 	icon_state = "gerkit"
 	item_state = "gerkit"
-
 	New()
 		..()
 		new /obj/item/weapon/reagent_containers/glass/small_pot/german_kit_lid( src )
