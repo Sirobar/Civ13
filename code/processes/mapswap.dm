@@ -130,16 +130,18 @@
 			maps = list(
 				MAP_REICHSTAG = 0,
 				MAP_KHALKHYN_GOL = 0,
-				MAP_OMAHA = 10,
+				MAP_MICROMAHA = 0,
+				MAP_OMAHA = 30,
 				MAP_KURSK = 10,
 				MAP_GULAG13 = 15,
 				MAP_STALINGRAD = 20,
 				MAP_SMALLINGRAD = 0,
 				MAP_NANJING = 20,
 //				MAP_IWO_JIMA = 70,
-				MAP_RIZAL_STADIUM = 0,
+				MAP_RIZAL_STADIUM = 15,
 				MAP_INTRAMUROS = 25,
 				MAP_WAKE_ISLAND = 20,
+				MAP_NANKOU = 0,
 			)
 
 		else if (epoch == "Early Modern Era (1896-1930)")
@@ -194,6 +196,7 @@
 				MAP_CAMP = 0,
 				MAP_KARAK = 0,
 				MAP_SAMMIRHAYEED = 20,
+				MAP_SEKIGAHARA = 0,
 			)
 		else if (epoch == "Stone Age (?-3000 B.C.)")
 			maps = list(
