@@ -41,7 +41,7 @@ obj/map_metadata/gulag13/job_enabled_specialcheck(var/datum/job/J)
 	..()
 	if (istype(J, /datum/job/civilian/fantasy))
 		. = FALSE
-	if (J.is_civil_war == TRUE)
+	if (J.is_civil_war == TRUE || J.is_abashiri == TRUE)
 		. = FALSE
 	if (istype(J, /datum/job/russian))
 		if (J.is_prison)
@@ -267,10 +267,10 @@ obj/map_metadata/gulag13/job_enabled_specialcheck(var/datum/job/J)
 /mob/living/human/proc/Sound_Alarm()
 	set name = "Sound the Siren"
 	set category = "Officer"
-	if (!map || map.ID != MAP_GULAG13 || map.ID != MAP_ABASHIRI)
+	if (!map || (map.ID != MAP_GULAG13 && map.ID != MAP_ABASHIRI))
 		usr << "You cannot use this in this map."
 		return
-	if (!original_job || !(istype(original_job, /datum/job/russian)) || !(istype(original_job, /datum/job/japanese/abashiri/guard)))
+	if (!original_job || (!(istype(original_job, /datum/job/russian)) && !(istype(original_job, /datum/job/japanese/abashiri/guard))))
 		usr << "You cannot use this."
 		return
 	if (istype(map, /obj/map_metadata/gulag13))
@@ -286,24 +286,24 @@ obj/map_metadata/gulag13/job_enabled_specialcheck(var/datum/job/J)
 					G13.alarm_proc()
 				return
 	if (istype(map, /obj/map_metadata/abashiri))
-		var/obj/map_metadata/abashiri/G13 = map
-		if (!G13.siren)
+		var/obj/map_metadata/abashiri/ABA = map
+		if (!ABA.siren)
 			world << "<font size=3 color='red'><center><b>ALARM</b><br>The siren has been activated, all prisoners must stop what they are doing and lay on the floor until the alarm is lifted!</center></font>"
 			var/warning_sound = sound('sound/misc/siren.ogg', repeat = FALSE, wait = TRUE, channel = 777)
 			for (var/mob/M in player_list)
 				M.client << warning_sound
-			G13.siren = TRUE
+			ABA.siren = TRUE
 			spawn(285)
-				if (G13.siren)
-					G13.alarm_proc()
+				if (ABA.siren)
+					ABA.alarm_proc()
 				return
 /mob/living/human/proc/Stop_Alarm()
 	set name = "Stop the Siren"
 	set category = "Officer"
-	if (!map || map.ID != MAP_GULAG13 || map.ID != MAP_ABASHIRI)
+	if (!map || (map.ID != MAP_GULAG13 && map.ID != MAP_ABASHIRI))
 		usr << "You cannot use this in this map."
 		return
-	if (!original_job || !(istype(original_job, /datum/job/russian)) || !(istype(original_job, /datum/job/japanese/abashiri/guard)))
+	if (!original_job || (!(istype(original_job, /datum/job/russian)) && !(istype(original_job, /datum/job/japanese/abashiri/guard))))
 		usr << "You cannot use this."
 		return
 	if (istype(map, /obj/map_metadata/gulag13))
@@ -315,13 +315,13 @@ obj/map_metadata/gulag13/job_enabled_specialcheck(var/datum/job/J)
 				M.client << warning_sound
 			G13.siren = FALSE
 	if (istype(map, /obj/map_metadata/abashiri))
-		var/obj/map_metadata/abashiri/G13 = map
-		if (G13.siren)
+		var/obj/map_metadata/abashiri/ABA = map
+		if (ABA.siren)
 			world << "<font size=3 color='green'><center><b>ALARM LIFTED</b><br>The siren has been stopped, prisoners can get back up.</center></font>"
 			var/warning_sound = sound(null, channel = 777)
 			for (var/mob/M in player_list)
 				M.client << warning_sound
-			G13.siren = FALSE
+			ABA.siren = FALSE
 
 /obj/map_metadata/gulag13/proc/alarm_proc()
 	if (siren)
@@ -348,26 +348,24 @@ obj/map_metadata/gulag13/job_enabled_specialcheck(var/datum/job/J)
 
 /obj/structure/camp_exportbook/attackby(var/obj/item/stack/S, var/mob/living/human/H)
 	var/obj/map_metadata/gulag13/G = null
-	if (!istype(map, /obj/map_metadata/gulag13))
-		return
-	else
-		G = map
-	if (istype(S, /obj/item/stack/ore) || istype(S, /obj/item/stack/material/wood))
-		for(var/i in G.points)
-			if (i[1]=="Guards")
-				i[2]+=S.amount*S.value
-				H << "You export \the [S]."
-				qdel(S)
-				return
 	var/obj/map_metadata/abashiri/AB = null
-	if (!istype(map, /obj/map_metadata/abashiri))
-		return
-	else
+	if (istype(map, /obj/map_metadata/gulag13))
+		G = map
+		if (istype(S, /obj/item/stack/ore) || istype(S, /obj/item/stack/material/wood))
+			for(var/i in G.points)
+				if (i[1]=="Guards")
+					i[2]+=S.amount*S.value
+					H << "You export \the [S]."
+					qdel(S)
+					return
+	else if (istype(map, /obj/map_metadata/abashiri))
 		AB = map
-	if (istype(S, /obj/item/stack/ore) || istype(S, /obj/item/stack/material/wood))
-		for(var/i in AB.points)
-			if (i[1]=="Guards")
-				i[2]+=S.amount*S.value
-				H << "You export \the [S]."
-				qdel(S)
-				return
+		if (istype(S, /obj/item/stack/ore) || istype(S, /obj/item/stack/material/wood))
+			for(var/i in AB.points)
+				if (i[1]=="Guards")
+					i[2]+=S.amount*S.value
+					H << "You export \the [S]."
+					qdel(S)
+					return
+	else
+		return

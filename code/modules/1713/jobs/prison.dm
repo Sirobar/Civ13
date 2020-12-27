@@ -234,6 +234,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////ABASHIRI PRISONERS///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/datum/job/civilian/abashiri
+	var/nationality = "none"
 /datum/job/civilian/abashiri/prisoner
 	is_abashiri = TRUE
 	is_prison = TRUE
@@ -241,7 +243,6 @@
 
 	rank_abbreviation = ""
 	title = "DO NOT USE"
-	var/nationality = "none"
 	default_language = "Japanese"
 	var/randrole = "none"
 	var/original_eyes = "Black"
@@ -573,6 +574,9 @@
 		randrole = "Wing 1"
 		H.add_note("Role", "You are a <b>Prisoner</b>. Your job is to get to serve your time and do the labour given to you. Maybe one day you find your way out of this hell")
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/jacket/haori_jacket/abashiri/wing1(H), slot_wear_suit)
+		if (nationality == "Ainu")
+			H.equip_to_slot_or_del(new /obj/item/clothing/head/ainu_bandana(H), slot_head)
+		world << "A <b>Wing 1</b> Prisoner has arrived"
 /datum/job/civilian/abashiri/prisoner/wing2
 	title = "Wing2 Prisoner"
 	en_meaning = ""
@@ -588,6 +592,9 @@
 		randrole = "Wing 2"
 		H.add_note("Role", "You are a <b>Prisoner</b>. Your job is to get to serve your time and do the labour given to you. Maybe one day you find your way out of this hell")
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/jacket/haori_jacket/abashiri/wing2(H), slot_wear_suit)
+		if (nationality == "Ainu")
+			H.equip_to_slot_or_del(new /obj/item/clothing/head/ainu_bandana(H), slot_head)
+		world << "A <b>Wing 2</b> Prisoner has arrived"
 /datum/job/civilian/abashiri/prisoner/wing3
 	title = "Wing3 Prisoner"
 	en_meaning = ""
@@ -602,6 +609,9 @@
 		randrole = "Wing 3"
 		H.add_note("Role", "You are a <b>Prisoner</b>. Your job is to get to serve your time and do the labour given to you. Maybe one day you find your way out of this hell")
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/jacket/haori_jacket/abashiri/wing3(H), slot_wear_suit)
+		if (nationality == "Ainu")
+			H.equip_to_slot_or_del(new /obj/item/clothing/head/ainu_bandana(H), slot_head)
+		world << "A <b>Wing 3</b> Prisoner has arrived"
 /datum/job/civilian/abashiri/prisoner/wing3_danger
 	title = "Maximum Security Inmate"
 	en_meaning = ""
@@ -620,6 +630,9 @@
 		H.setStat("strength", STAT_VERY_VERY_HIGH)
 		H.setStat("dexterity", STAT_VERY_HIGH)
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/jacket/haori_jacket/abashiri/wing3(H), slot_wear_suit)
+		if (nationality == "Ainu")
+			H.equip_to_slot_or_del(new /obj/item/clothing/head/ainu_bandana(H), slot_head)
+		world << "A <b>Wing 3</b> Prisoner has arrived"
 ///////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////ABASHIRI///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -630,7 +643,7 @@
 	rank_abbreviation = "Kan."
 
 
-	spawn_location = "JoinLateJPCap"
+	spawn_location = "JoinLateCivD"
 	is_officer = TRUE
 	whitelisted = TRUE
 	is_commander = TRUE
