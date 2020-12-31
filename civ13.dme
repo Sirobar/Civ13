@@ -492,6 +492,7 @@
 #include "code\modules\1713\trains.dm"
 #include "code\modules\1713\trench.dm"
 #include "code\modules\1713\vending.dm"
+#include "code\modules\1713\voting.dm"
 #include "code\modules\1713\weather.dm"
 #include "code\modules\1713\barriers\cover.dm"
 #include "code\modules\1713\barriers\sandbag.dm"
@@ -920,6 +921,7 @@
 #include "code\modules\reagents\reagent_containers\glass.dm"
 #include "code\modules\reagents\reagent_containers\pill.dm"
 #include "code\modules\reagents\reagent_containers\pill_bottle.dm"
+#include "code\modules\reagents\reagent_containers\spray.dm"
 #include "code\modules\reagents\reagent_containers\syringe.dm"
 #include "code\modules\reagents\reagent_containers\food\condiment.dm"
 #include "code\modules\reagents\reagent_containers\food\drinks.dm"
@@ -984,5 +986,5 @@
 #include "code\processes\zoom\zoom_scopes.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
-#include "maps\1903\abashiri.dmm"
+#include "maps\special\the_art_of_the_deal.dmm"
 // END_INCLUDE
