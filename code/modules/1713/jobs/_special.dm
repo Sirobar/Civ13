@@ -55,6 +55,8 @@
 /datum/job/var/is_eastern = FALSE
 /datum/job/var/is_western = FALSE
 /datum/job/var/is_abashiri = FALSE
+/datum/job/var/is_nva = FALSE
+/datum/job/var/is_capitol = FALSE
 
 /datum/job/var/squad = 0
 /datum/job/var/uses_squads = FALSE

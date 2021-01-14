@@ -409,6 +409,13 @@
 	item_state = "lwh_black"
 	worn_state = "lwh_black"
 
+/obj/item/clothing/head/helmet/modern/ach
+	name = "OCP ACH helmet"
+	desc = "A typical US Army Advanced Combat Helmet. This one is in OCP cammo."
+	icon_state = "ach_ocp"
+	item_state = "ach_ocp"
+	worn_state = "ach_ocp"
+
 	/* US Army Clothing*/
 
 /obj/item/clothing/under/us_uni/us_camo_dcu
@@ -979,6 +986,26 @@
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEG_LEFT|LEG_RIGHT|ARM_LEFT|ARM_RIGHT
 
+/obj/item/clothing/under/tacticool_hawaiian
+	name = "tacticool hawaiian outfit"
+	desc = "Assorted surplus cammo trousers with a nice hawaiian shirt for all your operating needs."
+	icon_state = "tacticool_hawaiian_blue"
+	item_state = "tacticool_hawaiian_blue"
+	worn_state = "tacticool_hawaiian_blue"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+
+/obj/item/clothing/under/tacticool_hawaiian/green
+	icon_state = "tacticool_hawaiian_green"
+	item_state = "tacticool_hawaiian_green"
+	worn_state = "tacticool_hawaiian_green"
+/obj/item/clothing/under/tacticool_hawaiian/orange
+	icon_state = "tacticool_hawaiian_orange"
+	item_state = "tacticool_hawaiian_orange"
+	worn_state = "tacticool_hawaiian_orange"
+/obj/item/clothing/under/tacticool_hawaiian/purple
+	icon_state = "tacticool_hawaiian_purple"
+	item_state = "tacticool_hawaiian_purple"
+	worn_state = "tacticool_hawaiian_purple"
 	/* IOG armor*/
 
 /obj/item/clothing/accessory/armor/nomads/iogsuit //too broad, this is meant to be some sort of extreme sports armorwear or something.
