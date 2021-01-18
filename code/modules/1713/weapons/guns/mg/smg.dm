@@ -576,8 +576,8 @@
 	attachment_slots = ATTACH_SILENCER|ATTACH_IRONSIGHTS|ATTACH_BARREL|ATTACH_ADV_SCOPE|ATTACH_UNDER
 	name = "AR-15"
 	desc = "A civilian market version of ArmaLite's AR-15, single-fire only. Has railings for several attachments."
-	base_icon = "m16a4"
-	icon_state = "m16a4"
+	base_icon = "ar15"
+	icon_state = "ar15"
 	full_auto = FALSE
 	firemodes = list(
 		list(name="semi auto",	burst=1, burst_delay=0.3, recoil=0, move_delay=2, dispersion = list(0.2, 0.4, 0.4, 0.5, 0.6)),
@@ -673,6 +673,18 @@
 		var/obj/item/weapon/attachment/under/foregrip/FP = new/obj/item/weapon/attachment/under/foregrip(src)
 		FP.attached(null,src,TRUE)
 
+/obj/item/weapon/gun/projectile/submachinegun/m16/commando/m4mws/fbi/New()
+	..()
+
+	var/obj/item/weapon/attachment/scope/adjustable/advanced/holographic/SP = new/obj/item/weapon/attachment/scope/adjustable/advanced/holographic(src)
+	SP.attached(null,src,TRUE)
+
+
+	var/obj/item/weapon/attachment/under/foregrip/FP = new/obj/item/weapon/attachment/under/foregrip(src)
+	FP.attached(null,src,TRUE)
+
+	var/obj/item/weapon/attachment/silencer/SL = new/obj/item/weapon/attachment/silencer(src)
+	SL.attached(null,src,TRUE)
 /obj/item/weapon/gun/projectile/submachinegun/m14
 	name = "M14"
 	desc = "An American battle rifle, chambered in 7.62x51mm."

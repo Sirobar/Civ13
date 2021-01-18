@@ -209,7 +209,7 @@
 
 	H.equip_to_slot_or_del(new /obj/item/weapon/radio/walkietalkie/faction1(H), slot_wear_id)
 	H.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/swat(H), slot_belt)
-	H.equip_to_slot_or_del(new /obj/item/weapon/gun/projectile/submachinegun/m16/commando/m4mws/att(H), slot_shoulder)
+	H.equip_to_slot_or_del(new /obj/item/weapon/gun/projectile/submachinegun/m16/commando/m4mws/fbi(H), slot_shoulder)
 	var/obj/item/clothing/under/uniform = H.w_uniform
 	var/obj/item/clothing/accessory/armor/coldwar/plates/interceptor/armor = new /obj/item/clothing/accessory/armor/coldwar/plates/interceptor(null)
 	uniform.attackby(armor, H)
@@ -256,7 +256,6 @@
 	var/obj/item/clothing/under/uniform = H.w_uniform
 	var/obj/item/clothing/accessory/armor/nomads/civiliankevlar/under/armor = new /obj/item/clothing/accessory/armor/nomads/civiliankevlar/under(null)
 	uniform.attackby(armor, H)
-	give_random_name(H)
 	H.add_note("Role", "You are an essential member of the U.S. Government. They are out to get you! Rely on the feds and stay alive!")
 	H.setStat("strength", STAT_NORMAL)
 	H.setStat("crafting", STAT_NORMAL)
@@ -302,31 +301,22 @@
 		H.equip_to_slot_or_del(new /obj/item/clothing/under/tacticool_hawaiian/green(H), slot_w_uniform)
 //armor
 	var/obj/item/clothing/under/uniform = H.w_uniform
-	var/randarm = rand(1,4)
+	var/randarm = rand(1,2)
 	if (randarm == 1)
-		var/obj/item/clothing/accessory/armor/coldwar/plates/interceptor/ocp/ocp_armor = new /obj/item/clothing/accessory/armor/coldwar/plates/interceptor/ocp(null)
-		uniform.attackby(ocp_armor, H)
-	else if (randarm == 2)
 		var/obj/item/clothing/accessory/armor/coldwar/pasgt/khaki/pasgt_armor = new /obj/item/clothing/accessory/armor/coldwar/pasgt/khaki(null)
 		uniform.attackby(pasgt_armor, H)
-	else if (randarm == 3)
+	else if (randarm == 2)
 		var/obj/item/clothing/accessory/armor/coldwar/platecarrierblack/plate_armor = new /obj/item/clothing/accessory/armor/coldwar/platecarrierblack(null)
 		uniform.attackby(plate_armor, H)
-	else if (randarm == 4)
-		var/obj/item/clothing/accessory/armor/coldwar/pasgt/pasgt_armor = new /obj/item/clothing/accessory/armor/coldwar/pasgt(null)
-		uniform.attackby(pasgt_armor, H)
+
 	H.equip_to_slot_or_del(new /obj/item/weapon/radio/walkietalkie/faction2(H), slot_wear_id)
 //head
-	var/randhead = rand(1,4)
+	var/randhead = rand(1,2)
 	switch(randhead)
 		if (1)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/modern/lwh(H), slot_head)
+			H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/modern/lwh/black(H), slot_head)
 		if (2)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/cowboyhat(H), slot_head)
-		if (3)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/jungle_hat(H), slot_head)
-		if (4)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/modern/pasgt(H), slot_head)
+			H.equip_to_slot_or_del(new /obj/item/clothing/head/cap(H), slot_head)
 //eyewear
 	if (prob(50))
 		if (prob(80))
@@ -372,7 +362,7 @@
 
 	H.equip_to_slot_or_del(new /obj/item/weapon/radio/walkietalkie/faction2(H), slot_wear_id)
 //head
-	if (prob(75))
+	if (prob(25))
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/cowboyhat(H), slot_head)
 	else
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/cap/maga(H), slot_head)
@@ -429,7 +419,6 @@
 
 	if (H.f_style != "Full Beard" && H.f_style != "Medium Beard" && H.f_style != "Long Beard")
 		H.f_style = pick("Full Beard","Medium Beard","Long Beard")
-	give_random_name(H)
 	H.add_note("Role", "You are a <b>[title]</b>. Keep your fellow patriots healthy and motivated!")
 	H.setStat("strength", STAT_NORMAL)
 	H.setStat("crafting", STAT_MEDIUM_LOW)
