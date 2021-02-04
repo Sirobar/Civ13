@@ -33,3 +33,4 @@ tts/amazontts.py
 tools/imglist.txt
 tools/jslist.txt
 tools/unused.txt
+config/host.txt
