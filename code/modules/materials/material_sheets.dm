@@ -104,7 +104,7 @@
 	default_type = "barbedwire"
 	value = 2
 	amount = 10
-	
+
 /obj/item/stack/material/bronze
 	name = "bronze"
 	icon_state = "sheet-bronze"
@@ -164,6 +164,23 @@
 	icon_state = "claylump"
 	default_type = "clay"
 	value = 2
+/obj/item/stack/material/clay/attackby(obj/item/W as obj, mob/user as mob)
+	if (map.ID == MAP_GULAG13)
+		if (!istype(W)) return//I really don't understand why this check is needed
+		if (istype(W, /obj/item/weapon/key/soviet/guard))
+			user << "<span class='notice'>You make the clay into a mold of the key.</span>"
+			new/obj/item/weapon/clay/mold/key(user.loc)
+			qdel(src)
+	if (istype(W, type))
+		var/obj/item/stack/S = W
+		merge(S)
+		S.update_icon()
+		src.update_icon()
+		spawn(0) //give the stacks a chance to delete themselves if necessary
+		if (S && usr.using_object == S)
+			S.interact(usr)
+		if (src && usr.using_object == src)
+			interact(usr)
 
 /obj/item/stack/material/electronics
 	name = "electronic circuits"
