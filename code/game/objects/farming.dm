@@ -37,6 +37,36 @@
 	color = "#d88046" //orange brown
 	biomes = list("desert", "jungle","savanna","semiarid")
 
+/obj/item/stack/farming/seeds/redpepper
+	name = "red pepper seeds"
+	plant = "redpepper"
+	color = "#8b0000" //redish black
+	biomes = list("desert","temperate","semiarid","sea")
+
+/obj/item/stack/farming/seeds/zucchini
+	name = "zucchini seeds"
+	plant = "zucchini"
+	color = "#656255" //dark shaded yellow
+	biomes = list("jungle","sea")
+
+/obj/item/stack/farming/seeds/parsnip
+	name = "parsnip seeds"
+	plant = "parsnip"
+	color = "#f3bc5f" //paletan
+	biomes = list("temperate","semiarid")
+
+/obj/item/stack/farming/seeds/sapodilla
+	name = "sapodilla seeds"
+	plant = "sapodilla"
+	color = "#f3bc5f" //paletan
+	biomes = list("jungle","sea")
+
+/obj/item/stack/farming/seeds/parsley
+	name = "parsley seeds"
+	plant = "parsley"
+	color = "#656255" //dark shaded yellow
+	biomes = list("temperate","semiarid","sea")
+
 /obj/item/stack/farming/seeds/sugarcane
 	name = "sugarcane seeds"
 	plant = "sugarcane"
@@ -227,6 +257,12 @@
 	plant = "pumpkin"
 	color = "#fbe151" //cinnamon
 	biomes = list("temperate", "taiga","tundra")
+
+/obj/item/stack/farming/seeds/agave
+	name = "agave seeds"
+	plant = "agave"
+	color = "#1164b4" //green blue
+	biomes = list("desert", "semiarid")
 
 /obj/item/stack/farming/seeds/banana
 	name = "banana seeds"
@@ -524,6 +560,15 @@
 	biomes = list("temperate","savanna", "desert", "sea","semiarid", "taiga")
 	max_water = 50
 
+/obj/structure/farming/plant/parsnip
+	name = "parsnip plant"
+	desc = "a parsnip plant."
+	icon = 'icons/farming/vegetables.dmi'
+	icon_state = "parsnip-grow1"
+	plant = "parsnip"
+	biomes = list("temperate","semiarid")
+	max_water = 60
+
 /* fruit plants */
 
 /obj/structure/farming/plant/apple
@@ -609,6 +654,15 @@
 	biomes = list("temperate","desert","sea","semiarid")
 	max_water = 70
 
+/obj/structure/farming/plant/zucchini
+	name = "zucchini"
+	desc = "An zucchini vine."
+	icon = 'icons/farming/fruits.dmi'
+	icon_state = "zucchini-grow1"
+	plant = "zucchini"
+	biomes = list("temperate","sea","jungle")
+	max_water = 70
+
 /obj/structure/farming/plant/cherry
 	name = "cherry"
 	desc = "An cherry tree."
@@ -617,6 +671,42 @@
 	plant = "cherry"
 	biomes = list("jungle","temperate","desert","savanna")
 	max_water = 40
+
+/obj/structure/farming/plant/redpepper
+	name = "red pepper"
+	desc = "A red pepper bush."
+	icon = 'icons/farming/fruits.dmi'
+	icon_state = "redpepper-grow1"
+	plant = "redpepper"
+	biomes = list("desert","temperate","semiarid","sea")
+	max_water = 30
+
+/obj/structure/farming/plant/sapodilla
+	name = "sapodilla"
+	desc = "A sapodilla tree."
+	icon = 'icons/farming/fruits.dmi'
+	icon_state = "sapodilla-grow1"
+	plant = "sapodilla"
+	biomes = list("jungle","sea")
+	max_water = 75
+
+/obj/structure/farming/plant/agave
+	name = "agave"
+	desc = "An agave bush."
+	icon = 'icons/farming/plants.dmi'
+	icon_state = "agave-grow1"
+	plant = "agave"
+	biomes = list("desert","semiarid")
+	max_water = 45
+
+/obj/structure/farming/plant/parsley
+	name = "parsely"
+	desc = "A parsely plant."
+	icon = 'icons/farming/plants.dmi'
+	icon_state = "parsely-grow1"
+	plant = "parsely"
+	biomes = list("temperate","semiarid","sea")
+	max_water = 80
 
 /obj/structure/farming/plant/apricot
 	name = "apricot"

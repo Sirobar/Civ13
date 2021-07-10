@@ -127,6 +127,25 @@
 	nutriment_factor = 2
 	color = "#792300"
 
+/datum/reagent/nutriment/paprika
+	name = "Paprika"
+	id = "paprika"
+	description = "A mildly spicy spice from red peppers."
+	taste_description = "mildly spicy"
+	taste_mult = 1.1
+	reagent_state = SOLID
+	nutriment_factor = 1.5
+	color = "#792300"
+
+/datum/reagent/nutriment/parsley
+	name = "Parsley"
+	id = "parsley"
+	description = "A clean and peppery taste with a touch of earthiness."
+	taste_description = "peppery and earthy"
+	taste_mult = 1.3
+	reagent_state = SOLID
+	nutriment_factor = 1.2
+
 /datum/reagent/nutriment/cola
 	name = "cola"
 	id = "cola"
@@ -231,6 +250,24 @@
 	reagent_state = LIQUID
 	color = "#709B40"
 	overdose = REAGENTS_OVERDOSE
+
+/datum/reagent/agave
+	name = "Agave"
+	id = "agave"
+	description = "A plant used to make mezcal."
+	taste_description = "sappy"
+	taste_mult = 1.2
+	reagent_state = LIQUID
+	color = "#709B40"
+
+/datum/reagent/fish
+	name = "Fish"
+	id = "fish"
+	description = "tastes like fish."
+	taste_description = "Fishy"
+	taste_mult = 1.2
+	reagent_state = SOLID
+	color = "#8E1600"
 
 /datum/reagent/capsaicin
 	name = "Capsaicin Oil"
@@ -447,6 +484,20 @@
 	taste_description = "grapes"
 	color = "#863333"
 
+/datum/reagent/drink/sapodillajuice
+	name = "Sapodilla Juice"
+	id = "sapodillajuice"
+	description = "It's sweet, malty!"
+	taste_description = "sweet and malty"
+	color = "#f3bc5f"
+
+/datum/reagent/drink/zucchinijuice
+	name = "Zucchini Juice"
+	id = "zucchinijuice"
+	description = "a strange green juice!"
+	taste_description = " slightly sweet and slightly bitter"
+	color = "#365E30"
+
 /datum/reagent/drink/lemonjuice
 	name = "Lemon Juice"
 	id = "lemonjuice"
@@ -492,6 +543,13 @@
 	description = "Juice of the potato. Bleh."
 	taste_description = "irish sadness"
 	color = "#302000"
+
+/datum/reagent/drink/apple_juice
+	name = "Apple Juice"
+	id = "applejuice"
+	description = "Juice of the old green apple."
+	taste_description = "sweet"
+	color = "#ff6249"
 
 /datum/reagent/drink/tomatojuice
 	name = "Tomato Juice"
@@ -796,6 +854,15 @@
 	color = "#33EE00"
 	strength = 40
 
+/datum/reagent/ethanol/mezcal
+	name = "Mezcal"
+	id = "mezcal"
+	description = "Good old honey sap water!"
+	taste_description = "savory and smoky"
+	taste_mult = 1.5
+	color = "#9b870c"
+	strength = 24
+
 /datum/reagent/ethanol/ale
 	name = "Ale"
 	id = "ale"
@@ -1016,6 +1083,14 @@
 	taste_description = "sweet 'n creamy"
 	color = "#664300"
 	strength = 15
+
+/datum/reagent/ethanol/garum
+	name = "Garum"
+	id = "garum"
+	description = "Horrid smell but very unami."
+	taste_description = "oceany"
+	color = "#F7C652"
+	strength = 3
 
 /datum/reagent/ethanol/amasec
 	name = "Amasec"
@@ -1349,7 +1424,16 @@
 	taste_description = "bitterness"
 	taste_mult = 2.5
 	color = "#ffffff80"
-	strength = 12
+	strength = 45
+
+/datum/reagent/ethanol/cider
+	name = "Cider"
+	id = "cider"
+	description = "You've really just some hotshot."
+	taste_description = "sweet and elegant"
+	taste_mult = 2.5
+	color = "#ffffff80"
+	strength = 10
 
 /datum/reagent/ethanol/neurotoxin
 	name = "Neurotoxin"

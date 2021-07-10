@@ -32,6 +32,63 @@
 		..()
 		reagents.add_reagent("peyote", 5)
 
+/obj/item/weapon/reagent_containers/food/snacks/grown/parsnip
+	name = "parsnip root"
+	icon_state = "parsnip"
+	desc = "A useful sweetner for food."
+	color = "#7f7053"
+	decay = 60*600
+	New()
+		..()
+		reagents.add_reagent("sugar", 2)
+
+/obj/item/weapon/reagent_containers/food/snacks/grown/zucchini
+	name = "Zucchini gourd"
+	icon_state = "zucchini"
+	desc = "A straight gourd plant."
+	color = "#6AAF6A"
+	decay = 60*600
+	New()
+		..()
+		reagents.add_reagent("zucchinijuice", 5)
+
+/obj/item/weapon/reagent_containers/food/snacks/grown/sapodilla
+	name = "sapodilla"
+	icon_state = "sapodilla"
+	desc = "strangely sweet."
+	color = "#f3bc5f"
+	decay = 60*600
+	New()
+		..()
+		reagents.add_reagent("sapodillajuice", 5)
+
+/obj/item/weapon/reagent_containers/food/snacks/grown/redpepper
+	name = "red pepper"
+	icon_state = "paprika_pepper"
+	desc = "A very useful pepper for spicing up food."
+	decay = 60*600
+	New()
+		..()
+		reagents.add_reagent("capsaicin", 8)
+
+/obj/item/weapon/reagent_containers/food/snacks/grown/agave
+	name = "agave"
+	icon_state = "agave_leaf"
+	desc = "A desert plant that is moderately useful."
+	decay = 60*600
+	New()
+		..()
+		reagents.add_reagent("agave", 10)
+
+/obj/item/weapon/reagent_containers/food/snacks/grown/parsley
+	name = "parsley"
+	icon_state = "parsley"
+	decay = 90*600
+	satisfaction = 2
+	New()
+		..()
+		reagents.add_reagent("coffee", 15)
+
 /obj/item/weapon/reagent_containers/food/snacks/grown/coffee
 	name = "green coffee"
 	icon_state = "coffee"
